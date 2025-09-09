@@ -1,0 +1,147 @@
+---
+---
+
+<section id="courses" class="courses">
+	<div class="container">
+		<h2 class="section-title gradient-text">Kurslarımız</h2>
+		<div class="courses-grid">
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+						<path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+						<path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Frontend Development</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Backend Development</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+						<line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</div>
+				<h3>Mobile Development</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2"/>
+						<line x1="7" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2"/>
+						<line x1="7" y1="14" x2="13" y2="14" stroke="currentColor" stroke-width="2"/>
+					</svg>
+				</div>
+				<h3>Business Analysis</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
+					</svg>
+				</div>
+				<h3>Digital Marketing</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+
+			<div class="course-card">
+				<div class="course-icon">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 22S8 18 8 13V6L12 4L16 6V13C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+						<path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Information Security</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.courses {
+		padding: 100px 0;
+		background: var(--light-bg);
+	}
+
+	.courses-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.course-card {
+		background: white;
+		padding: 2.5rem;
+		border-radius: 16px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		border: 1px solid rgba(64, 224, 208, 0.1);
+	}
+
+	.course-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 20px 40px rgba(64, 224, 208, 0.2);
+		border-color: var(--turquoise);
+	}
+
+	.course-icon {
+		width: 60px;
+		height: 60px;
+		background: var(--gradient);
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.course-icon svg {
+		width: 30px;
+		height: 30px;
+		color: white;
+	}
+
+	.course-card h3 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: var(--text-dark);
+	}
+
+	.course-card p {
+		color: var(--text-gray);
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.courses {
+			padding: 60px 0;
+		}
+
+		.courses-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.course-card {
+			padding: 2rem;
+		}
+	}
+</style>

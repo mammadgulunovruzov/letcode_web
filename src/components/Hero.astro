@@ -1,0 +1,142 @@
+---
+---
+
+<section id="home" class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<div class="hero-logo">
+				<img src="/star.png" alt="LetCode Academy" />
+			</div>
+			<h1 class="hero-title">Learn to Code, Code to Lead</h1>
+			<p class="hero-subtitle">Gələcəyin proqramçılarını yetişdiririk.</p>
+			<a href="#courses" class="btn-primary hero-cta">Kursları Kəşf Et</a>
+		</div>
+		<div class="hero-decoration">
+			<div class="floating-element element-1"></div>
+			<div class="floating-element element-2"></div>
+			<div class="floating-element element-3"></div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: var(--dark-bg);
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-content {
+		text-align: center;
+		z-index: 2;
+		position: relative;
+	}
+
+	.hero-logo {
+		margin-bottom: 2rem;
+	}
+
+	.hero-logo img {
+		height: 120px;
+		width: auto;
+		filter: drop-shadow(0 10px 30px rgba(64, 224, 208, 0.3));
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		color: var(--text-light);
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		color: var(--text-gray);
+		margin-bottom: 2.5rem;
+		font-weight: 300;
+	}
+
+	.hero-cta {
+		font-size: 1.1rem;
+		padding: 16px 32px;
+		border-radius: 50px;
+	}
+
+	.hero-decoration {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+	}
+
+	.floating-element {
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.1;
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.element-1 {
+		width: 200px;
+		height: 200px;
+		background: var(--turquoise);
+		top: 20%;
+		left: 10%;
+		animation-delay: 0s;
+	}
+
+	.element-2 {
+		width: 150px;
+		height: 150px;
+		background: var(--green);
+		top: 60%;
+		right: 15%;
+		animation-delay: 2s;
+	}
+
+	.element-3 {
+		width: 100px;
+		height: 100px;
+		background: var(--orange);
+		bottom: 20%;
+		left: 20%;
+		animation-delay: 4s;
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding-top: 80px;
+		}
+
+		.hero-logo img {
+			height: 80px;
+		}
+
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.2rem;
+		}
+
+		.floating-element {
+			display: none;
+		}
+	}
+</style>

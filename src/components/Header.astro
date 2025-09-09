@@ -1,0 +1,143 @@
+---
+---
+
+<header class="header">
+	<div class="container">
+		<nav class="nav">
+			<div class="logo">
+				<a href="/">
+					<img src="/logo.png" alt="LetCode Academy" />
+				</a>
+			</div>
+			<ul class="nav-menu">
+				<li><a href="#home">Ana səhifə</a></li>
+				<li><a href="#courses">Kurslar</a></li>
+				<li><a href="#teachers">Müəllimlər</a></li>
+				<li><a href="#about">Haqqımızda</a></li>
+				<li><a href="#contact">Əlaqə</a></li>
+			</ul>
+			<div class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.header {
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.5rem 0;
+		height: 70px;
+	}
+
+	.logo img {
+		height: 150px;
+		width: auto;
+	}
+
+	.nav-menu {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-menu a {
+		text-decoration: none;
+		color: var(--text-dark);
+		font-weight: 500;
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.nav-menu a:hover {
+		color: var(--turquoise);
+	}
+
+	.nav-menu a::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--gradient);
+		transition: width 0.3s ease;
+	}
+
+	.nav-menu a:hover::after {
+		width: 100%;
+	}
+
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		cursor: pointer;
+		gap: 4px;
+	}
+
+	.hamburger span {
+		width: 25px;
+		height: 3px;
+		background: var(--text-dark);
+		transition: all 0.3s ease;
+	}
+
+	@media (max-width: 768px) {
+		.nav-menu {
+			position: fixed;
+			top: 80px;
+			left: -100%;
+			width: 100%;
+			height: calc(100vh - 80px);
+			background: white;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			padding-top: 2rem;
+			transition: left 0.3s ease;
+		}
+
+		.nav-menu.active {
+			left: 0;
+		}
+
+		.hamburger {
+			display: flex;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const hamburger = document.querySelector('.hamburger');
+		const navMenu = document.querySelector('.nav-menu');
+
+		hamburger?.addEventListener('click', () => {
+			navMenu?.classList.toggle('active');
+		});
+
+		// Close menu when clicking on a link
+		document.querySelectorAll('.nav-menu a').forEach(link => {
+			link.addEventListener('click', () => {
+				navMenu?.classList.remove('active');
+			});
+		});
+	});
+</script>

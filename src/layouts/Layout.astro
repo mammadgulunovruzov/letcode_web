@@ -1,0 +1,106 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="az">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="LetCode Academy - Gələcəyin proqramçılarını yetişdiririk" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--turquoise: #40E0D0;
+		--green: #00C851;
+		--orange: #FF8C00;
+		--dark-bg: #0F1419;
+		--light-bg: #FFFFFF;
+		--text-dark: #1A1A1A;
+		--text-light: #FFFFFF;
+		--text-gray: #6B7280;
+		--gradient: linear-gradient(135deg, #40E0D0 0%, #00C851 50%, #FF8C00 100%);
+		--gradient-hover: linear-gradient(135deg, #36C7B8 0%, #00B347 50%, #E67E00 100%);
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		line-height: 1.6;
+		color: var(--text-dark);
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.gradient-text {
+		background: var(--gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.btn-primary {
+		background: var(--gradient);
+		color: white;
+		padding: 12px 24px;
+		border: none;
+		border-radius: 8px;
+		font-weight: 600;
+		text-decoration: none;
+		display: inline-block;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.btn-primary:hover {
+		background: var(--gradient-hover);
+		transform: translateY(-2px);
+		box-shadow: 0 10px 25px rgba(64, 224, 208, 0.3);
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 0 16px;
+		}
+		
+		.section-title {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+	}
+</style>
