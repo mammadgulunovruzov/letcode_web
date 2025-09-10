@@ -4,68 +4,83 @@
 <section id="teachers" class="teachers">
 	<div class="container">
 		<h2 class="section-title" style="color: white;">Müəllimlərimiz</h2>
-		<div class="teachers-carousel">
-			<button class="carousel-btn prev-btn" id="prevBtn">‹</button>
-			<div class="teachers-wrapper">
-				<div class="teachers-container" id="teachersContainer">
+		<div class="teachers-grid">
 			<div class="teacher-card clickable" onclick="window.location.href='/teachers/rahim-firudunlu'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}rahim_firudunlu_front.jpeg`} alt="Rahim Firudunlu" />
 				</div>
-				<h3>Rahim Firudunlu</h3>
-				<p>Frontend Development Instructor</p>
+				<div class="teacher-info">
+					<h3>Rahim Firudunlu</h3>
+					<p class="teacher-role">Frontend Development Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 
 			<div class="teacher-card clickable" onclick="window.location.href='/teachers/hasan-naghiyev'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}hasan_naghiyev_backend.jpeg`} alt="Hasan Naghiyev" />
 				</div>
-				<h3>Hasan Naghiyev</h3>
-				<p>Backend Development Instructor</p>
+				<div class="teacher-info">
+					<h3>Hasan Naghiyev</h3>
+					<p class="teacher-role">Backend Development Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 
 			<div class="teacher-card clickable" onclick="window.location.href='/teachers/valeh-asadov'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}valeh_asadov_mobile.jpeg`} alt="Valeh Asadov" />
 				</div>
-				<h3>Valeh Asadov</h3>
-				<p>Mobile Development Instructor</p>
+				<div class="teacher-info">
+					<h3>Valeh Asadov</h3>
+					<p class="teacher-role">Mobile Development Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 
 			<div class="teacher-card clickable" onclick="window.location.href='/teachers/sifaya-akbarova'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}sifaya_akbaroa_business.jpeg`} alt="Sifaya Akbaroa" />
 				</div>
-				<h3>Sifaya Akbarova</h3>
-				<p>IT Business Analysis Instructor</p>
+				<div class="teacher-info">
+					<h3>Sifaya Akbarova</h3>
+					<p class="teacher-role">IT Business Analysis Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 			
 			<div class="teacher-card">
 				<div class="teacher-image">
 					<!-- Photo not ready yet -->
 				</div>
-				<h3></h3>
-				<p>QA (Quality Assurance) Instructor</p>
+				<div class="teacher-info">
+					<h3></h3>
+					<p class="teacher-role">QA (Quality Assurance) Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 
 			<div class="teacher-card">
 				<div class="teacher-image">
 					<!-- Photo not ready yet -->
 				</div>
-				<h3></h3>
-				<p>CyberSecurity Instructor</p>
+				<div class="teacher-info">
+					<h3></h3>
+					<p class="teacher-role">CyberSecurity Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
 			</div>
 
 			<div class="teacher-card">
 				<div class="teacher-image">
 					<!-- Photo not ready yet -->
 				</div>
-				<h3></h3>
-				<p>Data Science and Analytics Instructor</p>
-			</div>
+				<div class="teacher-info">
+					<h3></h3>
+					<p class="teacher-role">Data Science and Analytics Instructor</p>
+					<p class="teacher-workplace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
 				</div>
 			</div>
-			<button class="carousel-btn next-btn" id="nextBtn">›</button>
 		</div>
 	</div>
 </section>
@@ -78,93 +93,35 @@
 
 	.teachers .section-title {
 		font-size: 2rem;
-		margin-bottom: 1rem;
+		margin-bottom: 3rem;
 	}
 
-	.teachers-carousel {
-		position: relative;
+	.teachers-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
 		max-width: 1200px;
 		margin: 0 auto;
 	}
 
-	.teachers-wrapper {
-		overflow: hidden;
-		border-radius: 20px;
-	}
-
-	.teachers-container {
-		display: flex;
-		transition: transform 0.5s ease;
-		gap: 2.5rem;
-	}
-
-	.carousel-btn {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		background: rgba(255, 255, 255, 0.2);
-		border: 2px solid var(--turquoise);
-		color: white;
-		font-size: 2rem;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		z-index: 10;
-		backdrop-filter: blur(10px);
-	}
-
-	.carousel-btn:hover {
-		background: var(--turquoise);
-		transform: translateY(-50%) scale(1.1);
-	}
-
-	.prev-btn {
-		left: -25px;
-	}
-
-	.next-btn {
-		right: -25px;
-	}
-
 	.teacher-card {
-		text-align: center;
 		background: rgba(255, 255, 255, 0.05);
-		padding: 3rem;
+		padding: 2.5rem;
 		border-radius: 20px;
 		transition: all 0.3s ease;
 		border: 1px solid rgba(64, 224, 208, 0.1);
 		backdrop-filter: blur(10px);
-		min-width: calc(50% - 1.25rem);
-		flex-shrink: 0;
-		min-height: 400px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		position: relative;
 		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 450px;
 	}
 
 	.teacher-card.clickable {
 		cursor: pointer;
 		user-select: none;
-	}
-
-	.teacher-card.clickable::after {
-		content: '👁️';
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		font-size: 1.5rem;
-		opacity: 0;
-		transition: all 0.3s ease;
-		transform: scale(0.8);
-	}
-
-	.teacher-card.clickable:hover::after {
-		opacity: 1;
-		transform: scale(1);
 	}
 
 	.teacher-card:hover {
@@ -176,14 +133,15 @@
 	}
 
 	.teacher-image {
-		width: 180px;
-		height: 180px;
-		margin: 0 auto 2rem;
+		width: 120px;
+		height: 120px;
+		margin-bottom: 1.5rem;
 		border-radius: 50%;
 		overflow: hidden;
 		border: 4px solid transparent;
 		background: var(--gradient);
 		padding: 4px;
+		flex-shrink: 0;
 	}
 
 	.teacher-image img {
@@ -193,16 +151,33 @@
 		border-radius: 50%;
 	}
 
-	.teacher-card h3 {
-		font-size: 1.3rem;
+	.teacher-info {
+		text-align: center;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.teacher-info h3 {
+		font-size: 1.4rem;
 		font-weight: 600;
 		color: var(--text-light);
 		margin-bottom: 0.5rem;
 	}
 
-	.teacher-card p {
+	.teacher-role {
+		color: var(--turquoise);
+		font-weight: 500;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.teacher-workplace {
 		color: var(--text-gray);
 		font-size: 0.9rem;
+		line-height: 1.5;
+		text-align: center;
 	}
 
 	@media (max-width: 768px) {
@@ -212,90 +187,36 @@
 
 		.teachers .section-title {
 			font-size: 1.5rem;
-			margin-bottom: 1rem;
+			margin-bottom: 2rem;
+		}
+
+		.teachers-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
 		}
 
 		.teacher-card {
-			padding: 2.5rem;
-			min-width: calc(100% - 2.5rem);
-			min-height: 350px;
+			padding: 2rem;
+			min-height: 400px;
 		}
 
 		.teacher-image {
-			width: 150px;
-			height: 150px;
+			width: 100px;
+			height: 100px;
+			margin-bottom: 1rem;
 		}
 
-		.carousel-btn {
-			width: 40px;
-			height: 40px;
-			font-size: 1.5rem;
+		.teacher-info h3 {
+			font-size: 1.2rem;
 		}
 
-		.prev-btn {
-			left: -20px;
+		.teacher-role {
+			font-size: 0.9rem;
 		}
 
-		.next-btn {
-			right: -20px;
+		.teacher-workplace {
+			font-size: 0.85rem;
 		}
 	}
 </style>
 
-<script>
-	// Teachers Carousel functionality
-	document.addEventListener('DOMContentLoaded', () => {
-		const container = document.getElementById('teachersContainer');
-		const prevBtn = document.getElementById('prevBtn');
-		const nextBtn = document.getElementById('nextBtn');
-		
-		let currentIndex = 0;
-		const teacherCards = container.querySelectorAll('.teacher-card');
-		const totalCards = teacherCards.length;
-		
-		// Calculate cards per view based on screen size
-		const getCardsPerView = () => window.innerWidth <= 768 ? 1 : 2;
-		const getCardWidth = () => {
-			const card = teacherCards[0];
-			return card.offsetWidth + parseFloat(getComputedStyle(container).gap);
-		};
-		
-		const updateCarousel = () => {
-			const cardsPerView = getCardsPerView();
-			const cardWidth = getCardWidth();
-			const translateX = -(currentIndex * cardWidth);
-			container.style.transform = `translateX(${translateX}px)`;
-			
-			// Update button states
-			prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-			nextBtn.style.opacity = currentIndex >= totalCards - cardsPerView ? '0.5' : '1';
-		};
-		
-		prevBtn.addEventListener('click', () => {
-			if (currentIndex > 0) {
-				currentIndex--;
-				updateCarousel();
-			}
-		});
-		
-		nextBtn.addEventListener('click', () => {
-			const cardsPerView = getCardsPerView();
-			if (currentIndex < totalCards - cardsPerView) {
-				currentIndex++;
-				updateCarousel();
-			}
-		});
-		
-		// Handle window resize
-		window.addEventListener('resize', () => {
-			const cardsPerView = getCardsPerView();
-			if (currentIndex >= totalCards - cardsPerView) {
-				currentIndex = Math.max(0, totalCards - cardsPerView);
-			}
-			updateCarousel();
-		});
-		
-		// Initialize
-		updateCarousel();
-	});
-</script>
