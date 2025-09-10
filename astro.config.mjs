@@ -5,5 +5,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://mammadgulunovruzov.github.io',
   base: '/letcode_web/',
-  output: 'static'
+  output: 'static',
+  devToolbar: {
+    enabled: false
+  }
 });
