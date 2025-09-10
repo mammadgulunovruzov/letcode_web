@@ -8,7 +8,7 @@
 			<button class="carousel-btn prev-btn" id="prevBtn">‹</button>
 			<div class="teachers-wrapper">
 				<div class="teachers-container" id="teachersContainer">
-			<div class="teacher-card">
+			<div class="teacher-card clickable" onclick="window.location.href='/teachers/rahim-firudunlu'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}rahim_firudunlu_front.jpeg`} alt="Rahim Firudunlu" />
 				</div>
@@ -16,7 +16,7 @@
 				<p>Frontend Development Instructor</p>
 			</div>
 
-			<div class="teacher-card">
+			<div class="teacher-card clickable" onclick="window.location.href='/teachers/hasan-naghiyev'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}hasan_naghiyev_backend.jpeg`} alt="Hasan Naghiyev" />
 				</div>
@@ -24,7 +24,7 @@
 				<p>Backend Development Instructor</p>
 			</div>
 
-			<div class="teacher-card">
+			<div class="teacher-card clickable" onclick="window.location.href='/teachers/valeh-asadov'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}valeh_asadov_mobile.jpeg`} alt="Valeh Asadov" />
 				</div>
@@ -32,7 +32,7 @@
 				<p>Mobile Development Instructor</p>
 			</div>
 
-			<div class="teacher-card">
+			<div class="teacher-card clickable" onclick="window.location.href='/teachers/sifaya-akbarova'">
 				<div class="teacher-image">
 					<img src={`${import.meta.env.BASE_URL}sifaya_akbaroa_business.jpeg`} alt="Sifaya Akbaroa" />
 				</div>
@@ -144,6 +144,27 @@
 		justify-content: center;
 		position: relative;
 		z-index: 1;
+	}
+
+	.teacher-card.clickable {
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.teacher-card.clickable::after {
+		content: '👁️';
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-size: 1.5rem;
+		opacity: 0;
+		transition: all 0.3s ease;
+		transform: scale(0.8);
+	}
+
+	.teacher-card.clickable:hover::after {
+		opacity: 1;
+		transform: scale(1);
 	}
 
 	.teacher-card:hover {

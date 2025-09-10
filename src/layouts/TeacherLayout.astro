@@ -1,0 +1,266 @@
+---
+export interface Props {
+	title: string;
+	teacherName: string;
+	photo: string;
+	photoAlt: string;
+}
+
+const { title, teacherName, photo, photoAlt } = Astro.props;
+---
+
+<!doctype html>
+<html lang="az">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={`${teacherName} - LetCode Academy müəllimi`} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}star.png`} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<img src={`${import.meta.env.BASE_URL}star.png`} alt="LetCode Academy" />
+						<span>LetCode Academy</span>
+					</div>
+					<nav>
+						<a href="/" class="back-btn">← Ana səhifə</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="teacher-detail">
+			<div class="container">
+				<div class="teacher-hero">
+					<div class="teacher-photo">
+						<img src={photo} alt={photoAlt} />
+					</div>
+					<div class="teacher-info">
+						<h1 class="teacher-name gradient-text">{teacherName}</h1>
+						<slot name="role" />
+					</div>
+				</div>
+				
+				<div class="teacher-content">
+					<slot />
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--turquoise: #40E0D0;
+		--green: #00C851;
+		--orange: #FF8C00;
+		--dark-bg: #0F1419;
+		--light-bg: #FFFFFF;
+		--text-dark: #1A1A1A;
+		--text-light: #FFFFFF;
+		--text-gray: #6B7280;
+		--gradient: linear-gradient(135deg, #40E0D0 0%, #00C851 50%, #FF8C00 100%);
+		--gradient-hover: linear-gradient(135deg, #36C7B8 0%, #00B347 50%, #E67E00 100%);
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		line-height: 1.6;
+		color: var(--text-dark);
+		background: var(--light-bg);
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.gradient-text {
+		background: var(--gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.header {
+		background: var(--light-bg);
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		backdrop-filter: blur(10px);
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 600;
+		font-size: 1.2rem;
+		color: var(--text-dark);
+	}
+
+	.logo img {
+		height: 32px;
+		width: auto;
+	}
+
+	.back-btn {
+		color: var(--text-dark);
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+		border: 1px solid rgba(64, 224, 208, 0.3);
+	}
+
+	.back-btn:hover {
+		background: var(--gradient);
+		color: white;
+		transform: translateX(-2px);
+	}
+
+	.teacher-detail {
+		padding: 2rem 0 4rem;
+		min-height: calc(100vh - 100px);
+	}
+
+	.teacher-hero {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+	}
+
+	.teacher-photo {
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 6px solid transparent;
+		background: var(--gradient);
+		padding: 6px;
+		flex-shrink: 0;
+	}
+
+	.teacher-photo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	.teacher-info {
+		flex: 1;
+	}
+
+	.teacher-name {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+		line-height: 1.2;
+	}
+
+	.teacher-content {
+		background: white;
+		padding: 3rem;
+		border-radius: 20px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		border: 1px solid rgba(64, 224, 208, 0.1);
+	}
+
+	.about-section h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		margin-bottom: 1.5rem;
+		position: relative;
+	}
+
+	.about-section h2::after {
+		content: '';
+		position: absolute;
+		bottom: -0.5rem;
+		left: 0;
+		width: 60px;
+		height: 4px;
+		background: var(--gradient);
+		border-radius: 2px;
+	}
+
+	.about-section p {
+		color: var(--text-gray);
+		line-height: 1.8;
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.role-badge {
+		background: var(--gradient);
+		color: white;
+		padding: 0.5rem 1.5rem;
+		border-radius: 25px;
+		font-weight: 500;
+		display: inline-block;
+		font-size: 1.1rem;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 0 16px;
+		}
+
+		.teacher-hero {
+			flex-direction: column;
+			text-align: center;
+			gap: 2rem;
+		}
+
+		.teacher-photo {
+			width: 200px;
+			height: 200px;
+		}
+
+		.teacher-name {
+			font-size: 2.2rem;
+		}
+
+		.teacher-content {
+			padding: 2rem;
+		}
+
+		.about-section h2 {
+			font-size: 1.5rem;
+		}
+
+		.about-section p {
+			font-size: 1rem;
+		}
+	}
+</style>
