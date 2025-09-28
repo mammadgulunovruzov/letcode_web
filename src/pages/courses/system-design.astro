@@ -1,0 +1,35 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+
+const courseIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M3 3H21V21H3V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+	<path d="M9 9H15V15H9V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+	<path d="M3 9H9" stroke="currentColor" stroke-width="2"/>
+	<path d="M15 9H21" stroke="currentColor" stroke-width="2"/>
+	<path d="M9 3V9" stroke="currentColor" stroke-width="2"/>
+	<path d="M9 15V21" stroke="currentColor" stroke-width="2"/>
+	<path d="M15 3V9" stroke="currentColor" stroke-width="2"/>
+	<path d="M15 15V21" stroke="currentColor" stroke-width="2"/>
+</svg>`;
+---
+
+<CourseLayout 
+	title="System Design | LetCode Academy"
+	courseName="System Design"
+	courseIcon={courseIcon}
+>
+	<div class="about-section">
+		<h2>Kurs haqqında</h2>
+		<p>
+			Bu proqram təcrübəli mühəndislərə iri miqyaslı, paylanmış sistemlərin layihələndirilməsi və 
+			implementasiyası bacarıqlarını inkişaf etdirməyə kömək edir. Kurs boyunca iştirakçılar yüksək 
+			performanslı və az gecikməli, davamlı, nasazlıqlara qarşı dözümlü və milyonlarla istifadəçiyə 
+			miqyaslana bilən sistemlərin necə qurulduğunu öyrənirlər. Tədris planına əsas dizayn prinsipləri, 
+			API gateway və service discovery, verilənlər bazasının dizaynı və sharding, keşləmə və mesajlaşma 
+			sistemləri, paylanmış tranzaksiyalar, konsistensiya modelləri, resiliency pattern-lər, monitorinq və 
+			observability, eləcə də qabaqcıl mövzular və real dünya case study-ləri daxildir. Kursun sonunda 
+			tələbələr kompleks problemləri miqyaslana bilən memarlıq parçalarına bölmək, düzgün dizayn pattern-lərini
+			 seçmək və sistem dizayn müsahibələrinə hazır olmaq bacarığına sahib olacaqlar.
+		</p>
+	</div>
+</CourseLayout>
