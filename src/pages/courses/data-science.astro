@@ -1,0 +1,22 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+
+const courseIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+	<circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+	<path d="M12 2V4M12 20V22M22 12H20M4 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>`;
+---
+
+<CourseLayout
+	title="Data Science | LetCode Academy"
+	courseName="Data Science"
+	courseIcon={courseIcon}
+>
+	<div class="about-section">
+		<h2>Kurs haqqında</h2>
+		<p>
+			Data Science kursu məlumatlardan dəyərli biliklər çıxarmaq və gələcək proqnozlar vermək üçün zəruri olan texnologiya və metodları öyrədir. Tələbələr Python dilində proqramlaşdırma, statistika, maşın öyrənməsi alqoritmləri, dərin öyrənmə və süni intellekt əsaslarını mənimsəyirlər. Kurs NumPy, Pandas, Scikit-learn, TensorFlow kimi alətlərin istifadəsini, məlumat analizi, vizuallaşdırma və prediktiv modellərin qurulmasını əhatə edir. Data Science mütəxəssisi olaraq real məlumat problemlərini həll etmək bacarığı qazanılır.
+		</p>
+	</div>
+</CourseLayout>

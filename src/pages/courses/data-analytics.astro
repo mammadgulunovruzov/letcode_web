@@ -1,0 +1,21 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+
+const courseIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M7 16L12 11L16 15L21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+---
+
+<CourseLayout
+	title="Data Analytics | LetCode Academy"
+	courseName="Data Analytics"
+	courseIcon={courseIcon}
+>
+	<div class="about-section">
+		<h2>Kurs haqqında</h2>
+		<p>
+			Data Analytics kursu məlumatları toplayıb təhlil etmək, anlamlı nəticələr çıxarmaq və qərar qəbuletmə prosesini dəstəkləmək bacarıqlarını öyrədir. Tələbələr SQL, Excel, Power BI, Tableau kimi analitik alətlərdən istifadə edərək məlumat bazalarından məlumat çəkməyi, təmizləməyi və vizuallaşdırmağı öyrənirlər. Kurs biznes analitikası, hesabat hazırlanması, KPI göstəricilərinin izlənməsi və məlumat əsaslı qərarların verilməsi metodlarını əhatə edir. Data Analyst kimi karyera qurmaq üçün lazımi bütün praktik bilik və təcrübə əldə edilir.
+		</p>
+	</div>
+</CourseLayout>
